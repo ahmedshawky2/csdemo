@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+   <!-- contractheader  -->
+      <record id="action_contractheader" model="ir.actions.act_window">
+          <field name="name">contractheader</field>
+          <field name="type">ir.actions.act_window</field>
+          <field name="res_model">contractheader</field>
+          <field name="view_mode">tree,form</field>
+  
+  
+      </record>
+  
+          <record id="view_contractheader_list" model="ir.ui.view">
+              <field name="name">view_contractheader_list</field>
+              <field name="model">contractheader</field>
+              <field name="arch" type="xml">
+                  <tree >
+                      <field name="name"/>
+                      
+                  </tree>
+              </field>
+           </record>
+
+           <record id="view_contractheader_form" model="ir.ui.view">
+          <field name="name">view_contractheader_form</field>
+          <field name="model">contractheader</field>
+      
+          <field name="arch" type="xml">
+              <form  >
+               <header>
+               <button name="setactive" type="object" string="Activate" class="oe_highlight" attrs="{}"/>
+               <button name="setdeactive" type="object" string="Deactivate" class="oe_highlight" attrs="{}"/>
+
+                    <field name="state" widget="statusbar" />
+                    </header>
+                    
+              <sheet>
+              <div class="oe_title">
+                            <h1><field name="name" placeholder="Contract Number.."/></h1>
+                            </div>
+              </sheet>
+                  
+              </form>
+          </field>
+          </record>
+
+
+           <!-- lov  -->
+            <record id="action_lov" model="ir.actions.act_window">
+                <field name="name">lov</field>
+                <field name="type">ir.actions.act_window</field>
+                <field name="res_model">lov</field>
+                <field name="view_mode">tree,form</field>
+        
+        
+            </record>
+        
+                <record id="view_lov_list" model="ir.ui.view">
+                    <field name="name">view_lov_list</field>
+                    <field name="model">lov</field>
+                    <field name="arch" type="xml">
+                        <tree >
+                            <field name="name"/>
+                            
+                        </tree>
+                    </field>
+                </record>
+                <record id="view_lov_form" model="ir.ui.view">
+                <field name="name">view_lov_form</field>
+                <field name="model">lov</field>
+            
+                <field name="arch" type="xml">
+                    <form  >
+                   
+                    <sheet></sheet>
+                        
+                    </form>
+                </field>
+            </record>
+    
+  
+
+   <!-- contractlineitem  -->
+      <record id="action_contractlineitem" model="ir.actions.act_window">
+          <field name="name">contractlineitem</field>
+          <field name="type">ir.actions.act_window</field>
+          <field name="res_model">contractlineitem</field>
+          <field name="view_mode">tree,form</field>
+  
+  
+      </record>
+  
+          <record id="view_contractlineitem_list" model="ir.ui.view">
+              <field name="name">view_contractlineitem_list</field>
+              <field name="model">contractlineitem</field>
+              <field name="arch" type="xml">
+                  <tree >
+                      <field name="Product_id"/>
+                      
+                  </tree>
+              </field>
+           </record>
+           <record id="view_contractlineitem_form" model="ir.ui.view">
+          <field name="name">view_contractlineitem_form</field>
+          <field name="model">contractlineitem</field>
+      
+          <field name="arch" type="xml">
+              <form  >
+              <sheet></sheet>
+                  
+              </form>
+          </field>
+      </record>
+    
+</odoo>

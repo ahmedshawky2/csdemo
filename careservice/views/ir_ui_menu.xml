@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+ 
+       
+        <menuitem id="parent_menu_contract"  name="Contract"  action="action_contractheader" parent ='crm.crm_menu_root' sequence="3000" />
+        <menuitem id="parent_menu_lov"  name="LOV"  action="action_lov" parent ='crm.crm_menu_root' sequence="3001" />
+        
+        
+    
+</odoo>     
