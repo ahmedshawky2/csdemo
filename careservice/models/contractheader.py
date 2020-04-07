@@ -32,6 +32,7 @@ class contractheader (models.Model):
     discount =  fields.Float(string='discount',index=True,)
     startdate = fields.Date(string='Start Date',index=True)
     expiredate = fields.Date(string='Expire Date',index=True,compute='_compute_expiredate' ,store=True )
+    parent_customer_id = fields.Many2one(string = 'Parent Customer',related='customer_id.parent_id',readonly=True,store=True)
 
     
     lineitem_ids = fields.One2many(string='lineitem',comodel_name='contractlineitem',inverse_name='contractheader_id',index=True)
