@@ -15,12 +15,16 @@ _logger = logging.getLogger(__name__)
 #TODO
 #
 
-class crmlead (models.Model):
-    _inherit = ['crm.lead']
-
-    x_area_id = fields.Many2one(string = 'Area',related='partner_id.x_area_id',readonly=True,store=True)
+class crmteam (models.Model):
+    _inherit = 'crm.team'
     sector_id = fields.Many2one(string='Sector',comodel_name='lov',domain=[('x_type','=','SECTOR')],index=True)
+
+
    
+
+    
+
+    
     
     
     

@@ -27,16 +27,16 @@ class saleorder (models.Model):
     offertype_id = fields.Many2one(string='offertype',comodel_name='lov',domain=[('x_type','=','QUOTE_OFFER_TYPE')],index=True)
     x_surveyby_id = fields.Many2one(string='Survey by',comodel_name='lov',domain=[('x_type','=','SURVEYBY')],index=True)
     x_surveyon =  fields.Datetime(string='Survey on',index=True)
-    
+    sector_id = fields.Many2one(string='Sector',comodel_name='lov',domain=[('x_type','=','SECTOR')],index=True)
 
     
 
 
     def createcontract(self):
         for r in self :
-            recs = self.env['contractheader'].search([('customer_id','=',r.partner_id.id),('state','in',['PENDING','ACTIVE'])])
-            if len(recs)>0:
-                 raise ValidationError("Customer already has Active/Pending Contract")
+            #recs = self.env['contractheader'].search([('customer_id','=',r.partner_id.id),('state','in',['PENDING','ACTIVE'])])
+            #if len(recs)>0:
+            #     raise ValidationError("Customer already has Active/Pending Contract")
 
             coid = self.env['contractheader'].create({'customer_id':r.partner_id.id,
             'total':r.amount_total,
@@ -53,6 +53,7 @@ class saleorder (models.Model):
                 'product_uom':l.product_uom.name,
                 'price_unit':l.price_unit,
                 'price_subtotal':l.price_subtotal,
+                'sector_id':l.sector_id,
                 
                 
                 })

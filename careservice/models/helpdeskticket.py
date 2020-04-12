@@ -28,9 +28,21 @@ class helpdeskticket (models.Model):
 
     contractlineitem = fields.Many2one(
         string='Product',
-        comodel_name='contractlineitem',
+        comodel_name='contractlineitem'
             
     )
+    sector_id = fields.Many2one(
+        string='Sector',
+        
+        related='contract_id.sector_id',
+        readonly=True
+        
+            
+    )
+    x_area_id = fields.Many2one(string = 'Area',related='partner_id.x_area_id',readonly=True,store=True)
+
+
+
 
 
     

@@ -81,6 +81,7 @@
     
   
 
+
    <!-- contractlineitem  -->
       <record id="action_contractlineitem" model="ir.actions.act_window">
           <field name="name">contractlineitem</field>

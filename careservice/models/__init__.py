@@ -6,5 +6,7 @@ from . import contractlineitem
 from . import saleorderline
 from . import saleorder
 from . import helpdeskticket
+from . import crmteam
+from . import helpdeskteam 
 from . import crmlead
 
