@@ -2,7 +2,7 @@
     'name': 'careservice',
     'description': 'careservice',
     'author': 'Minds',
-    'depends': ['base','crm','sale_management','helpdesk','l10n_generic_coa'],
+    'depends': ['base','sale_crm','crm','sale_management','helpdesk','l10n_generic_coa'],
     'application': True,
     'data': [
 
