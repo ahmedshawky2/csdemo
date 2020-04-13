@@ -20,7 +20,8 @@ class crmlead (models.Model):
 
     x_area_id = fields.Many2one(string = 'Area',related='partner_id.x_area_id',readonly=True,store=True)
     sector_id = fields.Many2one(string='Sector',comodel_name='lov',domain=[('x_type','=','SECTOR')],index=True)
-   
+    sector_id2 = fields.Many2one(string='Sector L2',comodel_name='lov',index=True)
+    sector_id3 = fields.Many2one(string='Sector L3',comodel_name='lov',index=True)   
     
     
     

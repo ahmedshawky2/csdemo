@@ -17,7 +17,8 @@ _logger = logging.getLogger(__name__)
 
 class crmteam (models.Model):
     _inherit = 'crm.team'
-    sector_id = fields.Many2one(string='Sector',comodel_name='lov',domain=[('x_type','=','SECTOR')],index=True)
+    sector_id = fields.Many2one(string='Sector',comodel_name='lov',domain=[('x_type','=','SECLVL3')],index=True)
+
 
 
    

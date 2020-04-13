@@ -19,6 +19,7 @@ class lov (models.Model):
     x_type = fields.Char(string='Type' ,index=True, required=True)
     x_val = fields.Char(string='Val' ,index=True, required=True)
     active = fields.Boolean(string='Active' ,index=True, required=True, default=True)
+    x_parent= fields.Many2one(string='Parent',comodel_name='lov')
     
     
 
@@ -30,7 +31,7 @@ class lov (models.Model):
 
 
 
-    _sql_constraints = [('constrainname', 'UNIQUE (name, x_type, x_val)', 'This List already exists')]
+    _sql_constraints = [('constrainname', 'UNIQUE (name, x_type, x_val,x_parent)', 'This List already exists')]
     
 
 

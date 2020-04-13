@@ -28,22 +28,27 @@ class saleorder (models.Model):
     x_surveyby_id = fields.Many2one(string='Survey by',comodel_name='lov',domain=[('x_type','=','SURVEYBY')],index=True)
     x_surveyon =  fields.Datetime(string='Survey on',index=True)
     sector_id = fields.Many2one(string='Sector',comodel_name='lov',domain=[('x_type','=','SECTOR')],index=True)
+    sector_id2 = fields.Many2one(string='Sector L2',comodel_name='lov',index=True)
+    sector_id3 = fields.Many2one(string='Sector L3',comodel_name='lov',index=True)   
 
     
 
 
     def createcontract(self):
         for r in self :
-            #recs = self.env['contractheader'].search([('customer_id','=',r.partner_id.id),('state','in',['PENDING','ACTIVE'])])
-            #if len(recs)>0:
-            #     raise ValidationError("Customer already has Active/Pending Contract")
+            recs = self.env['contractheader'].search([('quote_id','=',r.id)])
+            if len(recs)>0:
+                 raise ValidationError("Quote already has a Contract")
 
             coid = self.env['contractheader'].create({'customer_id':r.partner_id.id,
             'total':r.amount_total,
             'amount_untaxed':r.amount_untaxed,
             'amount_tax':r.amount_tax,
-            'quote_id':r.id,})
-            for l in r.order_line:
+            'quote_id':r.id,
+            'sector_id':r.sector_id.id,
+            'sector_id2':r.sector_id2.id,
+            'sector_id3':r.sector_id3.id,})
+        for l in r.order_line:
                 self.env['contractlineitem'].create({'contractheader_id':coid.id,
                 'Product_id':l.product_id.id,
                 'x_days':l.x_days,
@@ -52,8 +57,7 @@ class saleorder (models.Model):
                 'product_uom_qty':l.product_uom_qty,
                 'product_uom':l.product_uom.name,
                 'price_unit':l.price_unit,
-                'price_subtotal':l.price_subtotal,
-                'sector_id':l.sector_id,
+                'price_subtotal':l.price_subtotal
                 
                 
                 })
