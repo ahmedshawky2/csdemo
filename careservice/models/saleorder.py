@@ -47,7 +47,8 @@ class saleorder (models.Model):
             'quote_id':r.id,
             'sector_id':r.sector_id.id,
             'sector_id2':r.sector_id2.id,
-            'sector_id3':r.sector_id3.id,})
+            'sector_id3':r.sector_id3.id,
+            'team_id':r.team_id.id})
         for l in r.order_line:
                 self.env['contractlineitem'].create({'contractheader_id':coid.id,
                 'Product_id':l.product_id.id,

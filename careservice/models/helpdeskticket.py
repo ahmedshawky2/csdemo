@@ -40,7 +40,8 @@ class helpdeskticket (models.Model):
             
     )
     sector_id2 = fields.Many2one(string='Sector L2', related='contract_id.sector_id2',readonly=True)
-    sector_id3 = fields.Many2one(string='Sector L3', related='contract_id.sector_id3',readonly=True)   
+    sector_id3 = fields.Many2one(string='Sector L3', related='contract_id.sector_id3',readonly=True)
+    contract_team_id= fields.Many2one(string='Sales Team' ,related='contract_id.team_id',readonly=True,)   
     x_area_id = fields.Many2one(string = 'Area',related='partner_id.x_area_id',readonly=True,store=True)
 
 

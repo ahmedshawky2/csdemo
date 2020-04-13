@@ -20,6 +20,7 @@ class lov (models.Model):
     x_val = fields.Char(string='Val' ,index=True, required=True)
     active = fields.Boolean(string='Active' ,index=True, required=True, default=True)
     x_parent= fields.Many2one(string='Parent',comodel_name='lov')
+    x_parent_sales_team= fields.Many2one(string='Parent Sales Team',comodel_name='crm.team')
     
     
 
