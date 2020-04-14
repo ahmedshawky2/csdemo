@@ -63,6 +63,23 @@ class saleorder (models.Model):
                 
                 })
 
+    
+    @api.onchange('sector_id')
+    def _onchange_sector_id(self):
+        self.team_id = False
+        self.sector_id2 = False
+        self.sector_id3 = False
+
+
+    @api.onchange('team_id')
+    def _onchange_team_id(self):
+        
+        self.sector_id2 = False
+        self.sector_id3 = False
+
+    @api.onchange('sector_id2')
+    def _onchange_sector_id2(self):
+        self.sector_id3 = False    
 
 
 
