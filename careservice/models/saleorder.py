@@ -24,7 +24,7 @@ class saleorder (models.Model):
 
     contract_id = fields.One2many('contractheader', 'quote_id', string='Contract',index=True)
     x_area_id = fields.Many2one(string = 'Area',related='partner_id.x_area_id',readonly=True,store=True)
-    offertype_id = fields.Many2one(string='offertype',comodel_name='lov',domain=[('x_type','=','QUOTE_OFFER_TYPE')],index=True)
+    offertype_id = fields.Many2one(string='Offer Type',comodel_name='lov',domain=[('x_type','=','QUOTE_OFFER_TYPE')],index=True)
     x_surveyby_id = fields.Many2one(string='Survey by',comodel_name='lov',domain=[('x_type','=','SURVEYBY')],index=True)
     x_surveyon =  fields.Datetime(string='Survey on',index=True)
     sector_id = fields.Many2one(string='Sector',comodel_name='lov',domain=[('x_type','=','SECTOR')],index=True)

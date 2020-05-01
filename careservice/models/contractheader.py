@@ -36,7 +36,9 @@ class contractheader (models.Model):
     sector_id = fields.Many2one(string='Sector',comodel_name='lov',domain=[('x_type','=','SECTOR')],index=True)
     team_id= fields.Many2one(string='Sales Team',comodel_name='crm.team')
     sector_id2 = fields.Many2one(string='Sector L2',comodel_name='lov',index=True)
-    sector_id3 = fields.Many2one(string='Sector L3',comodel_name='lov',index=True)   
+    sector_id3 = fields.Many2one(string='Sector L3',comodel_name='lov',index=True)
+    sector_id4 = fields.Many2one(string='Sector L4',comodel_name='lov',index=True) 
+    billingcoid = fields.Char(string='Billing Contract number',index=True)     
 
     
     lineitem_ids = fields.One2many(string='lineitem',comodel_name='contractlineitem',inverse_name='contractheader_id',index=True)

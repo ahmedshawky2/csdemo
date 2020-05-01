@@ -29,8 +29,8 @@
           <field name="arch" type="xml">
               <form  >
                <header>
-               <button name="setactive" type="object" string="Activate" class="oe_highlight" attrs="{}"/>
-               <button name="setdeactive" type="object" string="Deactivate" class="oe_highlight" attrs="{}"/>
+               <button name="setactive" type="object" string="Activate" class="oe_highlight" states="PENDING,DEACTIVE" attrs="{}"/>
+               <button name="setdeactive" type="object" string="Deactivate" class="oe_highlight" states="ACTIVE" attrs="{}"/>
 
                     <field name="state" widget="statusbar" />
                     </header>
