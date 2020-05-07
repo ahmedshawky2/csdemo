@@ -22,6 +22,7 @@ class salesorderline (models.Model):
    
     x_days = fields.Integer(string='Days')
     x_hourperday = fields.Integer(string='Hours/Day')
+    sector_id = fields.Many2one(string='Sector',comodel_name='lov',domain=[('x_type','=','SECTOR')],index=True)
     
     
     @api.onchange('x_days','x_hourperday')

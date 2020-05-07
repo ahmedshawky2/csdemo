@@ -9,4 +9,5 @@ from . import helpdeskticket
 from . import crmteam
 from . import helpdeskteam 
 from . import crmlead
+from . import product_template
 

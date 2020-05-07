@@ -15,8 +15,8 @@ _logger = logging.getLogger(__name__)
 #TODO
 #
 
-class helpdeskteam (models.Model):
-    _inherit = 'helpdesk.team'
+class product_template (models.Model):
+    _inherit = 'product.template'
     sector_id = fields.Many2one(string='Sector',comodel_name='lov',index=True)
     
 
